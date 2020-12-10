@@ -10,3 +10,12 @@ r = 10;
 
 s = tf('s');
 P_cruise = 1/(m*s+b);
+
+%% test values of time parameters for P controller
+% Kp = 100;
+% C = pid(Kp);
+% T = feedback(C*P_cruise,1);
+% step(r*T,t)
+% axis([0 20 0 10])
+% Risetime_P = stepinfo(T).RiseTime
+% OverShoot_P = stepinfo(T).Overshoot
