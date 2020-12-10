@@ -5,7 +5,7 @@
 t = 0:2:50;
 m=1000;
 b=50;
-u = 10;
+u = 1;
 r = 10;
 
 s = tf('s');
@@ -51,5 +51,5 @@ step(T,t)
 
 %% run the simulink model
 
-sim("SuspensionPID_system.slx");
-open_system('SuspensionPID_system/Scope')
+sim("W2ques3_system.slx");
+open_system('W2ques3_system/Scope')
