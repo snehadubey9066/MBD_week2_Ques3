@@ -38,3 +38,13 @@ P_cruise = 1/(m*s+b);
 % Risetime_PD = stepinfo(T).RiseTime
 % OverShoot_PD = stepinfo(T).Overshoot
 % step(r*T,t)
+
+%% test values of kp,ki,kd and time parameters for PID
+Kp = 100;
+Ki = 50;
+Kd = 10;
+C = pid(Kp,Ki,Kd);
+T = feedback(C*P_cruise,1);
+Risetime_PID = stepinfo(T).RiseTime
+OverShoot_PID = stepinfo(T).Overshoot
+step(T,t)
