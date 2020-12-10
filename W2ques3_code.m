@@ -1,15 +1,28 @@
-%% Rise time < 5 s
-%% Overshoot < 10%
-%% Steady-state error < 2%
+%% Conditions :-
+% Rise time < 5 s
+% Overshoot < 10%
+% Steady-state error < 2%
+
+%% Uncomment section to check the values of rise time and overshoot 
+%% test values of kp,ki,kd and time parameters for PID  
 
 % t = 0:2:50;
 % m=1000;
 % b=50;
 % u = 1;
 % r = 10;
-
+% 
 % s = tf('s');
 % P_cruise = 1/(m*s+b);
+
+% Kp = 330;
+% Ki = 45;
+% Kd = 89;
+% C = pid(Kp,Ki,Kd);
+% T = feedback(C*P_cruise,1);
+% Risetime_PID = stepinfo(T).RiseTime
+% OverShoot_PID = stepinfo(T).Overshoot
+% step(T,t)
 
 %% test values of time parameters for P controller
 % Kp = 100;
@@ -38,16 +51,6 @@
 % Risetime_PD = stepinfo(T).RiseTime
 % OverShoot_PD = stepinfo(T).Overshoot
 % step(r*T,t)
-
-%% test values of kp,ki,kd and time parameters for PID
-% Kp = 330;
-% Ki = 45;
-% Kd = 90;
-% C = pid(Kp,Ki,Kd);
-% T = feedback(C*P_cruise,1);
-% Risetime_PID = stepinfo(T).RiseTime
-% OverShoot_PID = stepinfo(T).Overshoot
-% step(T,t)
 
 %% run the simulink model
 
