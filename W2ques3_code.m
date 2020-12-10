@@ -48,3 +48,8 @@ T = feedback(C*P_cruise,1);
 Risetime_PID = stepinfo(T).RiseTime
 OverShoot_PID = stepinfo(T).Overshoot
 step(T,t)
+
+%% run the simulink model
+
+sim("SuspensionPID_system.slx");
+open_system('SuspensionPID_system/Scope')
