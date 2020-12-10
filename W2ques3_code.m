@@ -29,3 +29,12 @@ P_cruise = 1/(m*s+b);
 % axis([0 50 0 15])
 % Risetime_PI = stepinfo(T).RiseTime
 % OverShoot_PI = stepinfo(T).Overshoot
+
+%% test values of time parameters for PD controller
+% Kp = 100;
+% Kd = 10;
+% C = pid(Kp,Kd);
+% T = feedback(C*P_cruise,1);
+% Risetime_PD = stepinfo(T).RiseTime
+% OverShoot_PD = stepinfo(T).Overshoot
+% step(r*T,t)
